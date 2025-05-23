@@ -17,5 +17,6 @@ export async function createShortURLService(url) {
 }
 
 export async function fetchShortURL(shortURLId) {
-    return ShortURLModel.findOne({ shortURL: shortURLId });
+    // Fetching the required document and updating the clicks by 1
+    return ShortURLModel.findOne({ shortURL: shortURLId }, { $inc: { clicks: 1 } });
 }
