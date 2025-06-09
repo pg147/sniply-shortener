@@ -14,7 +14,7 @@ function URLInputCard() {
     const [link, setLink] = useState("");
     const [error, setError] = useState("");
 
-    const { setLoading, setShortURL } = useContext(UrlContext);  // extracting loading setter through context
+    const { setLoading, setShortURL, setOriginalURL } = useContext(UrlContext);  // extracting loading setter through context
 
     // Function to handle form submit
     const handleFormSubmit = async (e) => {
@@ -34,6 +34,7 @@ function URLInputCard() {
             const convert = await ConvertURLService(link);
 
             if (convert.success) {
+                setOriginalURL(link);
                 setShortURL(convert.data.convertedURL);
 
                 // Cleanup after a successful conversion

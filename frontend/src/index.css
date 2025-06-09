@@ -76,10 +76,14 @@ body {
     }
 
     .display-url {
-        @apply px-4 py-3.5 w-full lg:max-w-3xl rounded-2xl bg-primary border border-primary-light outline-none
+        @apply flex items-center justify-between px-4 py-3.5 w-full lg:max-w-3xl rounded-2xl bg-primary border border-primary-light outline-none
     }
 
     .btn-primary {
         @apply cursor-pointer py-2.5 w-full bg-gradient-to-b from-primary-light via-primary to-primary from-0% via-35% to-100% rounded-2xl
+    }
+
+    .btn-copy {
+        @apply cursor-pointer flex items-center space-x-2 bg-primary-light hover:bg-primary-light/90 size-fit text-center px-5 py-3 rounded-lg
     }
 }
