@@ -1,6 +1,7 @@
 // Modules/dependencies
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 // Config Functions
 import connectDB from "./config/mongodb.config.js";
@@ -17,6 +18,9 @@ const app = express();  // express app initialization
 const PORT = process.env.PORT;  // initialized PORT for server
 
 // Middlewares
+app.use(cors({
+    origins: process.env.NODE_ENV === 'development' ? process.env.ALLOWED_DEV_ORIGIN : process.env.ALLOWED_PROD_ORIGIN
+}));
 app.use(express.json()); // to read request data in the form of json
 app.use(express.urlencoded({ extended: true }));
 
