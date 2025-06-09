@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+    --font-blauer: Blauer, "sans-serif";
+
+    --color-background: #020202;
+    --color-backshade: #210D35;
+    --color-primary: #4347CA;
+    --color-primary-light: #8873FA;
+    --color-card: #141023;
+    --color-bars: #3B2E4B;
+    --color-stroke: #261F34;
+}
+
+@font-face {
+    font-family: Blauer;
+    src: url("./assets/fonts/Blauer-Nue-Thin.otf") format("opentype");
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: Blauer;
+    src: url("./assets/fonts/Blauer-Nue-Light.otf") format("opentype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Blauer;
+    src: url("./assets/fonts/Blauer-Nue-Regular.otf") format("opentype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Blauer;
+    src: url("./assets/fonts/Blauer-Nue-Medium.otf") format("opentype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Blauer;
+    src: url("./assets/fonts/Blauer-Nue-Semibold.otf") format("opentype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Blauer;
+    src: url("./assets/fonts/Blauer-Nue-Extrabold.otf") format("opentype");
+    font-weight: 800;
+}
+
+body {
+    background-color: var(--color-background);
+    font-family: var(--font-blauer), "sans-serif";
+    color: white;
+}
+
+@layer utilities {
+    .input-form {
+        @apply w-full lg:max-w-3xl;
+    }
+
+    .input-container {
+        @apply w-full flex flex-col space-y-2;
+    }
+
+    .input-field {
+        @apply px-4 py-3.5 w-full rounded-2xl border border-stroke text-base outline-none font-thin
+    }
+
+    .input-field:focus {
+        @apply border-[1.5px] border-primary
+    }
+
+    .input-label {
+        @apply text-base text-white font-thin
+    }
+
+    .display-url {
+        @apply px-4 py-3.5 w-full lg:max-w-3xl rounded-2xl bg-primary border border-primary-light outline-none
+    }
+
+    .btn-primary {
+        @apply cursor-pointer py-2.5 w-full bg-gradient-to-b from-primary-light via-primary to-primary from-0% via-35% to-100% rounded-2xl
+    }
+}
